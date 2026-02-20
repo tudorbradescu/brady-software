@@ -1319,7 +1319,7 @@
       <!-- Card 2 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <img src="https://images.unsplash.com/photo-1596397249129-c25c4e55ac07?auto=format&fit=crop&w=600&h=338&q=80" alt="Gard beton" loading="lazy" class="portfolio-thumb-img">
+          <img src="https://images.unsplash.com/photo-1574144113084-b9f6f9a81645?auto=format&fit=crop&w=600&h=338&q=80" alt="Gard beton" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://gardbetonsibiu.ro" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1519,7 +1519,7 @@
       <!-- Card 12 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e52?auto=format&fit=crop&w=600&h=338&q=80" alt="Clinica stomatologica" loading="lazy" class="portfolio-thumb-img">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffbb172c7e7?auto=format&fit=crop&w=600&h=338&q=80" alt="Clinica stomatologica" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-clinica-stomatologica/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -2246,6 +2246,15 @@
 
     sections.forEach(function(s) { obs.observe(s); });
   })();
+  </script>
+  <script>
+    // Auto-fallback for broken portfolio images
+    document.querySelectorAll('.portfolio-thumb-img').forEach(img => {
+      img.addEventListener('error', function() {
+        const seed = this.alt.replace(/\s+/g,'-').toLowerCase();
+        this.src = 'https://picsum.photos/seed/' + seed + '/600/338';
+      });
+    });
   </script>
 </body>
 </html>
