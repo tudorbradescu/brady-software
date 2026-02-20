@@ -1127,6 +1127,14 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--black); }
     ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 2px; }
+  
+    .portfolio-thumb-img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .portfolio-card:hover .portfolio-thumb-img { transform: scale(1.07); }
   </style>
 </head>
 <body>
@@ -1287,35 +1295,11 @@
       </a>
     </div>
     <div class="portfolio-grid">
+
       <!-- Card 1 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-spa"></i>
-            <span>Beauty Salon</span>
-          </div>
-          <div class="portfolio-overlay">
-            <a href="https://new-lifestyle-salon.netlify.app" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
-            </a>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <span class="portfolio-tag">Beauty &amp; Wellness</span>
-          <h3 class="portfolio-name">New Lifestyle Beauty Salon</h3>
-          <a href="https://new-lifestyle-salon.netlify.app" target="_blank" rel="noopener" class="portfolio-url">
-            <i class="fa-solid fa-link" style="font-size:0.7rem"></i>
-            new-lifestyle-salon.netlify.app
-          </a>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="portfolio-card reveal tilt-card">
-        <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-monument"></i>
-            <span>Monumente Funerare</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1475938476802-32a7e851dad1?auto=format&fit=crop&w=600&h=338&q=80" alt="Monument granit" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://monumentelunerarecristian.ro" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1331,13 +1315,11 @@
           </a>
         </div>
       </div>
-      <!-- Card 3 -->
+
+      <!-- Card 2 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-border-all"></i>
-            <span>Garduri Beton</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&h=338&q=80" alt="Gard beton" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://gardbetonsibiu.ro" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1354,13 +1336,30 @@
         </div>
       </div>
 
+      <!-- Card 3 -->
+      <div class="portfolio-card reveal tilt-card">
+        <div class="portfolio-thumb">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&h=338&q=80" alt="Beauty salon" loading="lazy" class="portfolio-thumb-img">
+          <div class="portfolio-overlay">
+            <a href="https://tudorbradescu.github.io/new-lifestyle-salon/" target="_blank" rel="noopener" class="portfolio-visit">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-tag">Beauty & Wellness</span>
+          <h3 class="portfolio-name">New Lifestyle Beauty Salon</h3>
+          <a href="https://tudorbradescu.github.io/new-lifestyle-salon/" target="_blank" rel="noopener" class="portfolio-url">
+            <i class="fa-solid fa-link" style="font-size:0.7rem"></i>
+            tudorbradescu.github.io/new-lifestyle-salon
+          </a>
+        </div>
+      </div>
+
       <!-- Card 4 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-utensils"></i>
-            <span>Restaurant Tradițional</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&h=338&q=80" alt="Restaurant tradițional" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-crama-ardealeana/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1380,10 +1379,7 @@
       <!-- Card 5 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-scissors"></i>
-            <span>Beauty Salon Premium</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&h=338&q=80" alt="Coafor salon" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-salon-nona-sibiu/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1403,10 +1399,7 @@
       <!-- Card 6 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-car-wrench"></i>
-            <span>Service Auto</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&h=338&q=80" alt="Mecanic auto" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-autoexpert-cluj/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1423,14 +1416,10 @@
         </div>
       </div>
 
-
       <!-- Card 7 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-paw"></i>
-            <span>Pet Care</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&h=338&q=80" alt="Veterinar cu câine" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-petcare-cluj/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1450,10 +1439,7 @@
       <!-- Card 8 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-dumbbell"></i>
-            <span>Fitness Coach</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&h=338&q=80" alt="Antrenament fitness" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/radu-fitness-coaching/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1473,10 +1459,7 @@
       <!-- Card 9 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-house-chimney"></i>
-            <span>Pensiune Rustic</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=600&h=338&q=80" alt="Pensiune rustica" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-pensiunea-rustic/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1496,10 +1479,7 @@
       <!-- Card 10 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-camera"></i>
-            <span>Fotograf Nuntă</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&h=338&q=80" alt="Fotografie nuntă" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-fotograf-nunta-sibiu/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1519,10 +1499,7 @@
       <!-- Card 11 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-drafting-compass"></i>
-            <span>Design Interior</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&h=338&q=80" alt="Design interior modern" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-arhitect-design-interior/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1542,10 +1519,7 @@
       <!-- Card 12 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-tooth"></i>
-            <span>Clinică Stomatologică</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e52?auto=format&fit=crop&w=600&h=338&q=80" alt="Clinica stomatologica" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-clinica-stomatologica/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1565,10 +1539,7 @@
       <!-- Card 13 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-hammer"></i>
-            <span>Tâmplărie</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=600&h=338&q=80" alt="Atelier tamplarie" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-atelier-tamplarie/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1588,10 +1559,7 @@
       <!-- Card 14 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-skull"></i>
-            <span>Studio Tatuaje</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1542396601-dca920ea2807?auto=format&fit=crop&w=600&h=338&q=80" alt="Studio tatuaje" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-studio-tatuaje/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1611,10 +1579,7 @@
       <!-- Card 15 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-spa"></i>
-            <span>Yoga Studio</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&h=338&q=80" alt="Yoga studio" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-yoga-sibiu/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1634,10 +1599,7 @@
       <!-- Card 16 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-leaf"></i>
-            <span>Peisagist Grădini</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&h=338&q=80" alt="Gradina amenajata" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-peisagist-gradini/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1657,10 +1619,7 @@
       <!-- Card 17 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-brain"></i>
-            <span>Cabinet Psiholog</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&h=338&q=80" alt="Cabinet psiholog" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-cabinet-psiholog/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1680,10 +1639,7 @@
       <!-- Card 18 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-seedling"></i>
-            <span>Florărie Premium</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=600&h=338&q=80" alt="Florarie premium" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-florarie-premium/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
@@ -1703,10 +1659,7 @@
       <!-- Card 19 -->
       <div class="portfolio-card reveal tilt-card">
         <div class="portfolio-thumb">
-          <div class="portfolio-thumb-placeholder">
-            <i class="fa-solid fa-music"></i>
-            <span>Școală Dans</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1545959570-a94084071b5d?auto=format&fit=crop&w=600&h=338&q=80" alt="Scoala de dans" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-scoala-dans/" target="_blank" rel="noopener" class="portfolio-visit">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
