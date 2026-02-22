@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="ro" id="html-root">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1137,7 +1137,25 @@
       transition: transform 0.6s ease;
     }
     .portfolio-card:hover .portfolio-thumb-img { transform: scale(1.07); }
-  </style>
+  
+    /* Language Switcher */
+    .lang-switcher {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1) !important;
+      border-radius: 8px;
+      padding: 6px 12px;
+      cursor: pointer !important;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+    }
+    .lang-switcher:hover { background: rgba(255,255,255,0.1); }
+</style>
 </head>
 <body>
 
@@ -1160,19 +1178,22 @@
       </div>
     </div>
     <div class="loader-line"></div>
-    <div class="loader-sub">Cluj-Napoca, România</div>
+    <div class="loader-sub" data-i18n="loaderLocation">Cluj-Napoca, România</div>
   </div>
 
   <!-- Navbar -->
   <nav id="navbar">
     <a href="#hero" class="nav-logo">Brady<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="#services">Servicii</a></li>
-      <li><a href="#portfolio">Portofoliu</a></li>
-      <li><a href="#about">Despre</a></li>
-      <li><a href="#process">Proces</a></li>
+      <li><a href="#services" data-i18n="navServices">Servicii</a></li>
+      <li><a href="#portfolio" data-i18n="navPortfolio">Portofoliu</a></li>
+      <li><a href="#about" data-i18n="navAbout">Despre</a></li>
+      <li><a href="#process" data-i18n="navProcess">Proces</a></li>
     </ul>
-    <a href="#contact" class="nav-cta magnetic-btn">Contact →</a>
+    <button class="lang-switcher" id="lang-switcher" onclick="switchLanguage(currentLang === 'de' ? 'ro' : 'de')" aria-label="Switch language">
+      <span id="lang-flag">🇩🇪</span>
+    </button>
+    <a href="#contact" class="nav-cta magnetic-btn" data-i18n="navContact">Contact →</a>
     <div class="hamburger" id="hamburger" role="button" aria-label="Menu" tabindex="0">
       <span></span>
       <span></span>
@@ -1182,12 +1203,12 @@
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
-    <a href="#hero" class="mobile-link" data-mobile-link>Acasă</a>
-    <a href="#services" class="mobile-link" data-mobile-link>Servicii</a>
-    <a href="#portfolio" class="mobile-link" data-mobile-link>Portofoliu</a>
-    <a href="#about" class="mobile-link" data-mobile-link>Despre</a>
-    <a href="#process" class="mobile-link" data-mobile-link>Proces</a>
-    <a href="#contact" class="mobile-link" data-mobile-link>Contact</a>
+    <a href="#hero" class="mobile-link" data-mobile-link data-i18n="mobileHome">Acasă</a>
+    <a href="#services" class="mobile-link" data-mobile-link data-i18n="navServices">Servicii</a>
+    <a href="#portfolio" class="mobile-link" data-mobile-link data-i18n="navPortfolio">Portofoliu</a>
+    <a href="#about" class="mobile-link" data-mobile-link data-i18n="navAbout">Despre</a>
+    <a href="#process" class="mobile-link" data-mobile-link data-i18n="navProcess">Proces</a>
+    <a href="#contact" class="mobile-link" data-mobile-link data-i18n="mobileContact">Contact</a>
     <div class="mobile-menu-contact" id="mobile-menu-contact">
       <a href="mailto:bradescut@gmail.com">bradescut@gmail.com</a>
       <a href="tel:0727819906">0727 819 906</a>
@@ -1201,21 +1222,21 @@
     <div class="hero-content">
       <div class="hero-badge" id="hero-badge">
         <i class="fa-solid fa-circle" style="font-size:0.4rem;color:var(--gold)"></i>
-        Disponibil pentru proiecte noi
+        <span data-i18n="heroBadge">Disponibil pentru proiecte noi</span>
       </div>
       <h1 class="hero-title">
-        <span class="hero-line"><span class="hero-line-inner">Transformăm</span></span>
-        <span class="hero-line"><span class="hero-line-inner">ideile tale în</span></span>
-        <span class="hero-line"><span class="hero-line-inner"><em>experiențe</em></span></span>
-        <span class="hero-line"><span class="hero-line-inner"><span class="gold">digitale</span> excepționale</span></span>
+        <span class="hero-line"><span class="hero-line-inner" data-i18n="heroLine1">Transformăm</span></span>
+        <span class="hero-line"><span class="hero-line-inner" data-i18n="heroLine2">ideile tale în</span></span>
+        <span class="hero-line"><span class="hero-line-inner"><em data-i18n="heroLine3">experiențe</em></span></span>
+        <span class="hero-line"><span class="hero-line-inner" data-i18n="heroLine4"><span class="gold">digitale</span> excepționale</span></span>
       </h1>
-      <p class="hero-sub" id="hero-sub">Web Development &nbsp;•&nbsp; UI/UX Design &nbsp;•&nbsp; Automatizări AI</p>
+      <p class="hero-sub" id="hero-sub" data-i18n="heroSub">Web Development &nbsp;•&nbsp; UI/UX Design &nbsp;•&nbsp; Automatizări AI</p>
       <div class="hero-actions" id="hero-actions">
         <a href="#contact" class="btn-primary magnetic-btn">
-          Hai să colaborăm <i class="fa-solid fa-arrow-right"></i>
+          <span data-i18n="heroBtnPrimary">Hai să colaborăm</span> <i class="fa-solid fa-arrow-right"></i>
         </a>
         <a href="#portfolio" class="btn-secondary">
-          Vezi portofoliu <i class="fa-solid fa-eye"></i>
+          <span data-i18n="heroBtnSecondary">Vezi portofoliu</span> <i class="fa-solid fa-eye"></i>
         </a>
       </div>
     </div>
@@ -1231,14 +1252,14 @@
       <!-- Items duplicated for seamless loop -->
       <div class="marquee-item"><div class="marquee-dot"></div>Web Development</div>
       <div class="marquee-item"><div class="marquee-dot"></div>UI/UX Design</div>
-      <div class="marquee-item"><div class="marquee-dot"></div>Automatizări AI</div>
+      <div class="marquee-item"><div class="marquee-dot"></div><span data-i18n="marqueeAiAuto">Automatizări AI</span></div>
       <div class="marquee-item"><div class="marquee-dot"></div>E-Commerce</div>
       <div class="marquee-item"><div class="marquee-dot"></div>SEO Optimization</div>
       <div class="marquee-item"><div class="marquee-dot"></div>React &amp; Vue</div>
       <div class="marquee-item"><div class="marquee-dot"></div>Node.js Backend</div>
       <div class="marquee-item"><div class="marquee-dot"></div>Web Development</div>
       <div class="marquee-item"><div class="marquee-dot"></div>UI/UX Design</div>
-      <div class="marquee-item"><div class="marquee-dot"></div>Automatizări AI</div>
+      <div class="marquee-item"><div class="marquee-dot"></div><span data-i18n="marqueeAiAuto">Automatizări AI</span></div>
       <div class="marquee-item"><div class="marquee-dot"></div>E-Commerce</div>
       <div class="marquee-item"><div class="marquee-dot"></div>SEO Optimization</div>
       <div class="marquee-item"><div class="marquee-dot"></div>React &amp; Vue</div>
@@ -1249,38 +1270,38 @@
   <!-- Services -->
   <section id="services">
     <div class="services-header reveal">
-      <div class="section-label">Servicii</div>
-      <h2 class="section-title">Tot ce ai nevoie<br>pentru prezența ta online</h2>
-      <p class="section-sub">De la un site simplu la sisteme complexe — livrăm soluții complete, pe măsura afacerii tale.</p>
+      <div class="section-label" data-i18n="navServices">Servicii</div>
+      <h2 class="section-title" data-i18n="servicesSectionTitle">Tot ce ai nevoie<br>pentru prezența ta online</h2>
+      <p class="section-sub" data-i18n="servicesSectionSub">De la un site simplu la sisteme complexe — livrăm soluții complete, pe măsura afacerii tale.</p>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
         <span class="service-num">01</span>
         <span class="service-icon">🌐</span>
-        <h3 class="service-name">Website-uri la Comandă</h3>
-        <p class="service-desc">Site-uri moderne, rapide și optimizate SEO, adaptate perfect brandului tău. Performanță maximă pe orice dispozitiv.</p>
-        <span class="service-arrow">Află mai mult <i class="fa-solid fa-arrow-right"></i></span>
+        <h3 class="service-name" data-i18n="service01Name">Website-uri la Comandă</h3>
+        <p class="service-desc" data-i18n="service01Desc">Site-uri moderne, rapide și optimizate SEO, adaptate perfect brandului tău. Performanță maximă pe orice dispozitiv.</p>
+        <span class="service-arrow" data-i18n="serviceLearnMore">Află mai mult <i class="fa-solid fa-arrow-right"></i></span>
       </div>
       <div class="service-card reveal">
         <span class="service-num">02</span>
         <span class="service-icon">🎨</span>
-        <h3 class="service-name">UI/UX Design</h3>
-        <p class="service-desc">Interfețe elegante care convertesc vizitatori în clienți. Design intuitiv, estetic și orientat spre conversie.</p>
-        <span class="service-arrow">Află mai mult <i class="fa-solid fa-arrow-right"></i></span>
+        <h3 class="service-name" data-i18n="service02Name">UI/UX Design</h3>
+        <p class="service-desc" data-i18n="service02Desc">Interfețe elegante care convertesc vizitatori în clienți. Design intuitiv, estetic și orientat spre conversie.</p>
+        <span class="service-arrow" data-i18n="serviceLearnMore">Află mai mult <i class="fa-solid fa-arrow-right"></i></span>
       </div>
       <div class="service-card reveal">
         <span class="service-num">03</span>
         <span class="service-icon">⚙️</span>
-        <h3 class="service-name">Automatizări &amp; Integrări</h3>
-        <p class="service-desc">Sisteme care lucrează pentru tine 24/7. Automatizăm procese repetitive și integrăm tool-uri pentru eficiență maximă.</p>
-        <span class="service-arrow">Află mai mult <i class="fa-solid fa-arrow-right"></i></span>
+        <h3 class="service-name" data-i18n="service03Name">Automatizări &amp; Integrări</h3>
+        <p class="service-desc" data-i18n="service03Desc">Sisteme care lucrează pentru tine 24/7. Automatizăm procese repetitive și integrăm tool-uri pentru eficiență maximă.</p>
+        <span class="service-arrow" data-i18n="serviceLearnMore">Află mai mult <i class="fa-solid fa-arrow-right"></i></span>
       </div>
       <div class="service-card reveal">
         <span class="service-num">04</span>
         <span class="service-icon">🤖</span>
-        <h3 class="service-name">Automatizări cu AI</h3>
-        <p class="service-desc">Soluții inteligente care îți economisesc timp și bani. Integrăm AI în procesele tale pentru un avantaj competitiv real.</p>
-        <span class="service-arrow">Află mai mult <i class="fa-solid fa-arrow-right"></i></span>
+        <h3 class="service-name" data-i18n="service04Name">Automatizări cu AI</h3>
+        <p class="service-desc" data-i18n="service04Desc">Soluții inteligente care îți economisesc timp și bani. Integrăm AI în procesele tale pentru un avantaj competitiv real.</p>
+        <span class="service-arrow" data-i18n="serviceLearnMore">Află mai mult <i class="fa-solid fa-arrow-right"></i></span>
       </div>
     </div>
   </section>
@@ -1289,11 +1310,11 @@
   <section id="portfolio">
     <div class="portfolio-header">
       <div class="reveal">
-        <div class="section-label">Portofoliu</div>
-        <h2 class="section-title">Proiecte de care<br>suntem mândri</h2>
+        <div class="section-label" data-i18n="navPortfolio">Portofoliu</div>
+        <h2 class="section-title" data-i18n="portfolioSectionTitle">Proiecte de care<br>suntem mândri</h2>
       </div>
       <a href="#contact" class="btn-secondary reveal" style="white-space:nowrap">
-        Proiectul tău? <i class="fa-solid fa-arrow-right"></i>
+        <span data-i18n="portfolioBtnCta">Proiectul tău?</span> <i class="fa-solid fa-arrow-right"></i>
       </a>
     </div>
     <div class="portfolio-grid">
@@ -1304,7 +1325,7 @@
           <img src="https://images.unsplash.com/photo-1475938476802-32a7e851dad1?auto=format&fit=crop&w=600&h=338&q=80" alt="Monument granit" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://monumentefunerarecristian.ro/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1324,7 +1345,7 @@
           <img src="https://images.unsplash.com/photo-1574144113084-b9f6f9a81645?auto=format&fit=crop&w=600&h=338&q=80" alt="Gard beton" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://gardbetonsibiu.ro" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1344,7 +1365,7 @@
           <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&h=338&q=80" alt="Beauty salon" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/new-lifestyle-salon/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1364,7 +1385,7 @@
           <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&h=338&q=80" alt="Restaurant tradițional" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-crama-ardealeana/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1384,7 +1405,7 @@
           <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&h=338&q=80" alt="Coafor salon" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-salon-nona-sibiu/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1404,7 +1425,7 @@
           <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&h=338&q=80" alt="Mecanic auto" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-autoexpert-cluj/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1424,7 +1445,7 @@
           <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&h=338&q=80" alt="Veterinar cu câine" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-petcare-cluj/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1444,7 +1465,7 @@
           <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&h=338&q=80" alt="Antrenament fitness" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/radu-fitness-coaching/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1464,7 +1485,7 @@
           <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=600&h=338&q=80" alt="Pensiune rustica" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-pensiunea-rustic/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1484,7 +1505,7 @@
           <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&h=338&q=80" alt="Fotografie nuntă" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-fotograf-nunta-sibiu/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1504,7 +1525,7 @@
           <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&h=338&q=80" alt="Design interior modern" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-arhitect-design-interior/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1524,7 +1545,7 @@
           <img src="https://images.unsplash.com/photo-1588776814546-1ffbb172c7e7?auto=format&fit=crop&w=600&h=338&q=80" alt="Clinica stomatologica" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-clinica-stomatologica/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1544,7 +1565,7 @@
           <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=600&h=338&q=80" alt="Atelier tamplarie" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-atelier-tamplarie/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1564,7 +1585,7 @@
           <img src="https://images.unsplash.com/photo-1542396601-dca920ea2807?auto=format&fit=crop&w=600&h=338&q=80" alt="Studio tatuaje" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-studio-tatuaje/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1584,7 +1605,7 @@
           <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&h=338&q=80" alt="Yoga studio" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-yoga-sibiu/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1604,7 +1625,7 @@
           <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&h=338&q=80" alt="Gradina amenajata" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-peisagist-gradini/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1624,7 +1645,7 @@
           <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&h=338&q=80" alt="Cabinet psiholog" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-cabinet-psiholog/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1644,7 +1665,7 @@
           <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=600&h=338&q=80" alt="Florarie premium" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-florarie-premium/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1664,7 +1685,7 @@
           <img src="https://images.unsplash.com/photo-1535743686920-55e4145369b9?auto=format&fit=crop&w=600&h=338&q=80" alt="Scoala de dans" loading="lazy" class="portfolio-thumb-img">
           <div class="portfolio-overlay">
             <a href="https://tudorbradescu.github.io/portfolio-scoala-dans/" target="_blank" rel="noopener" class="portfolio-visit">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Vizitează site-ul
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portfolioVisit">Vizitează site-ul</span>
             </a>
           </div>
         </div>
@@ -1685,9 +1706,9 @@
   <section id="about">
     <div class="about-grid">
       <div class="about-left reveal">
-        <div class="section-label">Despre mine</div>
-        <h2 class="section-title">Tudor Bradescu —<br>Web Developer</h2>
-        <p class="about-text">
+        <div class="section-label" data-i18n="aboutLabel">Despre mine</div>
+        <h2 class="section-title" data-i18n="aboutTitle">Tudor Bradescu —<br>Web Developer</h2>
+        <p class="about-text" data-i18n-html="aboutText">
           Freelancer <strong>pasionat de web development modern</strong> din Cluj-Napoca, specializat în soluții digitale pentru business-uri din România.
           <br><br>
           Construiesc site-uri și aplicații web care nu doar arată bine — ci <strong>funcționează perfect</strong> și aduc rezultate reale clienților mei.
@@ -1709,15 +1730,15 @@
         <div class="stats-grid">
           <div class="stat-card">
             <div class="stat-num" data-count="12" data-suffix="+">0<span>+</span></div>
-            <div class="stat-label">Ani Experiență în Domeniu</div>
+            <div class="stat-label" data-i18n="statYears">Ani Experiență în Domeniu</div>
           </div>
           <div class="stat-card">
             <div class="stat-num" data-count="100" data-suffix="%">0<span>%</span></div>
-            <div class="stat-label">Clienți Satisfăcuți</div>
+            <div class="stat-label" data-i18n="statClients">Clienți Satisfăcuți</div>
           </div>
           <div class="stat-card">
             <div class="stat-num" data-count="24" data-suffix="/7">0<span>/7</span></div>
-            <div class="stat-label">Support Non-Stop</div>
+            <div class="stat-label" data-i18n="statSupport">Support Non-Stop</div>
           </div>
         </div>
       </div>
@@ -1727,40 +1748,40 @@
   <!-- Process -->
   <section id="process">
     <div class="process-header reveal">
-      <div class="section-label">Cum lucrez</div>
-      <h2 class="section-title">Un proces simplu,<br>rezultate excepționale</h2>
-      <p class="section-sub">De la prima discuție până la lansare — un proces transparent, eficient și fără surprize.</p>
+      <div class="section-label" data-i18n="processLabel">Cum lucrez</div>
+      <h2 class="section-title" data-i18n="processTitle">Un proces simplu,<br>rezultate excepționale</h2>
+      <p class="section-sub" data-i18n="processSub">De la prima discuție până la lansare — un proces transparent, eficient și fără surprize.</p>
     </div>
     <div class="process-steps">
       <div class="process-step reveal">
         <div class="process-num"><span>01</span></div>
         <div class="process-body">
-          <h3 class="process-name">Consultare &amp; Analiză</h3>
-          <p class="process-desc">Înțelegem nevoile și obiectivele tale. Analizăm piața, concurența și publicul țintă pentru a construi o strategie solidă.</p>
+          <h3 class="process-name" data-i18n="step01Name">Consultare &amp; Analiză</h3>
+          <p class="process-desc" data-i18n="step01Desc">Înțelegem nevoile și obiectivele tale. Analizăm piața, concurența și publicul țintă pentru a construi o strategie solidă.</p>
         </div>
         <span class="process-step-icon">01</span>
       </div>
       <div class="process-step reveal">
         <div class="process-num"><span>02</span></div>
         <div class="process-body">
-          <h3 class="process-name">Design &amp; Prototip</h3>
-          <p class="process-desc">Creăm vizualul înainte de cod. Primești wireframes și mockup-uri pentru aprobare — nicio surpriză la final.</p>
+          <h3 class="process-name" data-i18n="step02Name">Design &amp; Prototip</h3>
+          <p class="process-desc" data-i18n="step02Desc">Creăm vizualul înainte de cod. Primești wireframes și mockup-uri pentru aprobare — nicio surpriză la final.</p>
         </div>
         <span class="process-step-icon">02</span>
       </div>
       <div class="process-step reveal">
         <div class="process-num"><span>03</span></div>
         <div class="process-body">
-          <h3 class="process-name">Dezvoltare &amp; Testare</h3>
-          <p class="process-desc">Cod curat, performant și scalabil. Testăm pe toate dispozitivele și browserele pentru un rezultat impecabil.</p>
+          <h3 class="process-name" data-i18n="step03Name">Dezvoltare &amp; Testare</h3>
+          <p class="process-desc" data-i18n="step03Desc">Cod curat, performant și scalabil. Testăm pe toate dispozitivele și browserele pentru un rezultat impecabil.</p>
         </div>
         <span class="process-step-icon">03</span>
       </div>
       <div class="process-step reveal">
         <div class="process-num"><span>04</span></div>
         <div class="process-body">
-          <h3 class="process-name">Lansare &amp; Support</h3>
-          <p class="process-desc">Suntem alături după lansare. Oferim suport continuu, actualizări și optimizări pentru a menține site-ul la vârf.</p>
+          <h3 class="process-name" data-i18n="step04Name">Lansare &amp; Support</h3>
+          <p class="process-desc" data-i18n="step04Desc">Suntem alături după lansare. Oferim suport continuu, actualizări și optimizări pentru a menține site-ul la vârf.</p>
         </div>
         <span class="process-step-icon">04</span>
       </div>
@@ -1770,20 +1791,20 @@
   <!-- Marquee 2 (blue band) -->
   <div class="marquee-section-2">
     <div class="marquee-track-2">
-      <div class="marquee-item-2"><span class="marquee-star">★</span> Calitate Premium</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> Livrat la Timp</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> Support 24/7</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> 100% Satisfacție</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> Design Modern</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> SEO Optimizat</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> Cod Curat</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> Calitate Premium</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> Livrat la Timp</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> Support 24/7</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> 100% Satisfacție</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> Design Modern</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> SEO Optimizat</div>
-      <div class="marquee-item-2"><span class="marquee-star">★</span> Cod Curat</div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueePremiumQuality">Calitate Premium</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueeOnTime">Livrat la Timp</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueeSupport247">Support 24/7</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueeSatisfaction">100% Satisfacție</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueeModernDesign">Design Modern</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueeSEO">SEO Optimizat</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueeCleanCode">Cod Curat</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueePremiumQuality">Calitate Premium</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueeOnTime">Livrat la Timp</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueeSupport247">Support 24/7</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueeSatisfaction">100% Satisfacție</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueeModernDesign">Design Modern</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueeSEO">SEO Optimizat</span></div>
+      <div class="marquee-item-2"><span class="marquee-star">★</span> <span data-i18n="marqueeCleanCode">Cod Curat</span></div>
     </div>
   </div>
 
@@ -1791,9 +1812,9 @@
   <section id="contact">
     <div class="contact-inner">
       <div class="contact-left reveal">
-        <div class="section-label">Contact</div>
-        <h2 class="contact-title">Hai să construim<br>ceva <em>extraordinar</em><br>împreună</h2>
-        <p class="contact-desc">Ai un proiect în minte? Scrie-mi și îți răspund în maxim 24 de ore cu o propunere personalizată.</p>
+        <div class="section-label" data-i18n="navContact2">Contact</div>
+        <h2 class="contact-title" data-i18n="contactTitle">Hai să construim<br>ceva <em>extraordinar</em><br>împreună</h2>
+        <p class="contact-desc" data-i18n="contactDesc">Ai un proiect în minte? Scrie-mi și îți răspund în maxim 24 de ore cu o propunere personalizată.</p>
         <div class="contact-items">
           <div class="contact-item">
             <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
@@ -1805,7 +1826,7 @@
           </div>
           <div class="contact-item">
             <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-            <span>Cluj-Napoca, România</span>
+            <span data-i18n="loaderLocation">Cluj-Napoca, România</span>
           </div>
         </div>
       </div>
@@ -1814,31 +1835,31 @@
           <form id="contact-form" onsubmit="handleSubmit(event)">
             <div class="form-row-2">
               <div class="form-row">
-                <label for="name">Nume</label>
+                <label for="name" data-i18n="formName">Nume</label>
                 <input type="text" id="name" name="name" placeholder="Tudor Ionescu" required />
               </div>
               <div class="form-row">
-                <label for="email">Email</label>
+                <label for="email" data-i18n="formEmail">Email</label>
                 <input type="email" id="email" name="email" placeholder="tudor@email.com" required />
               </div>
             </div>
             <div class="form-row">
-              <label for="service">Serviciu</label>
+              <label for="service" data-i18n="formService">Serviciu</label>
               <select id="service" name="service">
-                <option value="">Alege serviciul dorit</option>
-                <option value="website">Website la Comandă</option>
-                <option value="design">UI/UX Design</option>
-                <option value="automation">Automatizări &amp; Integrări</option>
-                <option value="ai">Automatizări cu AI</option>
-                <option value="other">Altceva</option>
+                <option value="" data-i18n="formServicePlaceholder">Alege serviciul dorit</option>
+                <option value="website" data-i18n="formOptWebsite">Website la Comandă</option>
+                <option value="design" data-i18n="formOptDesign">UI/UX Design</option>
+                <option value="automation" data-i18n="formOptAutomation">Automatizări &amp; Integrări</option>
+                <option value="ai" data-i18n="formOptAI">Automatizări cu AI</option>
+                <option value="other" data-i18n="formOptOther">Altceva</option>
               </select>
             </div>
             <div class="form-row">
-              <label for="message">Mesaj</label>
-              <textarea id="message" name="message" placeholder="Descrie-mi proiectul tău..." required></textarea>
+              <label for="message" data-i18n="formMessage">Mesaj</label>
+              <textarea id="message" name="message" placeholder="Descrie-mi proiectul tău..." data-i18n-placeholder="formTextareaPlaceholder" required></textarea>
             </div>
             <button type="submit" class="form-submit magnetic-btn">
-              Trimite un mesaj <i class="fa-solid fa-paper-plane"></i>
+              <span data-i18n="formSubmit">Trimite un mesaj</span> <i class="fa-solid fa-paper-plane"></i>
             </button>
           </form>
         </div>
@@ -1851,10 +1872,10 @@
     <div class="footer-inner">
       <div class="footer-logo">Brady<span>.</span>Software</div>
       <ul class="footer-links">
-        <li><a href="#services">Servicii</a></li>
-        <li><a href="#portfolio">Portofoliu</a></li>
-        <li><a href="#about">Despre</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#services" data-i18n="navServices">Servicii</a></li>
+        <li><a href="#portfolio" data-i18n="navPortfolio">Portofoliu</a></li>
+        <li><a href="#about" data-i18n="navAbout">Despre</a></li>
+        <li><a href="#contact" data-i18n="navContact2">Contact</a></li>
       </ul>
       <div class="footer-social">
         <a href="mailto:bradescut@gmail.com" class="social-btn" aria-label="Email">
@@ -1869,8 +1890,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2026 Brady Software. Toate drepturile rezervate.</p>
-      <p class="footer-made">Construit cu <span>♥</span> în Cluj-Napoca, România</p>
+      <p class="footer-copy" data-i18n="footerCopy">© 2026 Brady Software. Toate drepturile rezervate.</p>
+      <p class="footer-made" data-i18n="footerMade">Construit cu <span>♥</span> în Cluj-Napoca, România</p>
     </div>
   </footer>
 
@@ -2204,13 +2225,14 @@
     const service = form.querySelector('#service').value;
     const message = form.querySelector('#message').value;
 
-    btn.textContent = 'Se trimite...';
+    const iDE = (typeof currentLang !== 'undefined' && currentLang === 'de');
+    btn.textContent = iDE ? 'Wird gesendet...' : 'Se trimite...';
     btn.disabled = true;
 
     // Build mailto link
-    const subject = encodeURIComponent('Proiect nou — Brady Software');
+    const subject = encodeURIComponent(iDE ? 'Neues Projekt — Brady Software' : 'Proiect nou — Brady Software');
     const body = encodeURIComponent(
-      'Buna ziua,\n\nNume: ' + name +
+      (iDE ? 'Guten Tag,\n\nName: ' : 'Buna ziua,\n\nNume: ') + name +
       '\nEmail: ' + email +
       '\nServiciu: ' + service +
       '\n\nMesaj:\n' + message +
@@ -2220,7 +2242,7 @@
     window.location.href = 'mailto:bradescut@gmail.com?subject=' + subject + '&body=' + body;
 
     setTimeout(function() {
-      btn.innerHTML = '✓ Mesaj trimis! <i class="fa-solid fa-check"></i>';
+      btn.innerHTML = iDE ? '✓ Nachricht gesendet! <i class="fa-solid fa-check"></i>' : '✓ Mesaj trimis! <i class="fa-solid fa-check"></i>';
       btn.style.background = '#10b981';
       btn.disabled = false;
     }, 1500);
@@ -2257,6 +2279,228 @@
         this.src = 'https://picsum.photos/seed/' + seed + '/600/338';
       });
     });
+  </script>
+
+  <!-- i18n: Bilingual RO/DE support -->
+  <script>
+  // ──────────────────────────────────────────────────────────────
+  // 14. LANGUAGE SWITCHER (RO / DE)
+  // ──────────────────────────────────────────────────────────────
+  var currentLang = (new URLSearchParams(window.location.search).get('lang') || 'ro');
+  if (currentLang !== 'de') currentLang = 'ro';
+
+  var translations = {
+    ro: {
+      loaderLocation: 'Cluj-Napoca, România',
+      navServices: 'Servicii',
+      navPortfolio: 'Portofoliu',
+      navAbout: 'Despre',
+      navProcess: 'Proces',
+      navContact: 'Contact →',
+      navContact2: 'Contact',
+      mobileHome: 'Acasă',
+      mobileContact: 'Contact',
+      heroBadge: 'Disponibil pentru proiecte noi',
+      heroLine1: 'Transformăm',
+      heroLine2: 'ideile tale în',
+      heroLine3: 'experiențe',
+      heroLine4: '<span class="gold">digitale</span> excepționale',
+      heroSub: 'Web Development &nbsp;•&nbsp; UI/UX Design &nbsp;•&nbsp; Automatizări AI',
+      heroBtnPrimary: 'Hai să colaborăm',
+      heroBtnSecondary: 'Vezi portofoliu',
+      marqueeAiAuto: 'Automatizări AI',
+      servicesSectionTitle: 'Tot ce ai nevoie<br>pentru prezența ta online',
+      servicesSectionSub: 'De la un site simplu la sisteme complexe — livrăm soluții complete, pe măsura afacerii tale.',
+      service01Name: 'Website-uri la Comandă',
+      service01Desc: 'Site-uri moderne, rapide și optimizate SEO, adaptate perfect brandului tău. Performanță maximă pe orice dispozitiv.',
+      service02Name: 'UI/UX Design',
+      service02Desc: 'Interfețe elegante care convertesc vizitatori în clienți. Design intuitiv, estetic și orientat spre conversie.',
+      service03Name: 'Automatizări & Integrări',
+      service03Desc: 'Sisteme care lucrează pentru tine 24/7. Automatizăm procese repetitive și integrăm tool-uri pentru eficiență maximă.',
+      service04Name: 'Automatizări cu AI',
+      service04Desc: 'Soluții inteligente care îți economisesc timp și bani. Integrăm AI în procesele tale pentru un avantaj competitiv real.',
+      serviceLearnMore: 'Află mai mult',
+      portfolioSectionTitle: 'Proiecte de care<br>suntem mândri',
+      portfolioBtnCta: 'Proiectul tău?',
+      portfolioVisit: 'Vizitează site-ul',
+      aboutLabel: 'Despre mine',
+      aboutTitle: 'Tudor Bradescu —<br>Web Developer',
+      aboutText: 'Freelancer <strong>pasionat de web development modern</strong> din Cluj-Napoca, specializat în soluții digitale pentru business-uri din România.<br><br>Construiesc site-uri și aplicații web care nu doar arată bine — ci <strong>funcționează perfect</strong> și aduc rezultate reale clienților mei.<br><br>Fiecare proiect primește <strong>atenție completă</strong> și este livrat la cele mai înalte standarde de calitate.',
+      statYears: 'Ani Experiență în Domeniu',
+      statClients: 'Clienți Satisfăcuți',
+      statSupport: 'Support Non-Stop',
+      processLabel: 'Cum lucrez',
+      processTitle: 'Un proces simplu,<br>rezultate excepționale',
+      processSub: 'De la prima discuție până la lansare — un proces transparent, eficient și fără surprize.',
+      step01Name: 'Consultare & Analiză',
+      step01Desc: 'Înțelegem nevoile și obiectivele tale. Analizăm piața, concurența și publicul țintă pentru a construi o strategie solidă.',
+      step02Name: 'Design & Prototip',
+      step02Desc: 'Creăm vizualul înainte de cod. Primești wireframes și mockup-uri pentru aprobare — nicio surpriză la final.',
+      step03Name: 'Dezvoltare & Testare',
+      step03Desc: 'Cod curat, performant și scalabil. Testăm pe toate dispozitivele și browserele pentru un rezultat impecabil.',
+      step04Name: 'Lansare & Support',
+      step04Desc: 'Suntem alături după lansare. Oferim suport continuu, actualizări și optimizări pentru a menține site-ul la vârf.',
+      marqueePremiumQuality: 'Calitate Premium',
+      marqueeOnTime: 'Livrat la Timp',
+      marqueeSupport247: 'Support 24/7',
+      marqueeSatisfaction: '100% Satisfacție',
+      marqueeModernDesign: 'Design Modern',
+      marqueeSEO: 'SEO Optimizat',
+      marqueeCleanCode: 'Cod Curat',
+      contactTitle: 'Hai să construim<br>ceva <em>extraordinar</em><br>împreună',
+      contactDesc: 'Ai un proiect în minte? Scrie-mi și îți răspund în maxim 24 de ore cu o propunere personalizată.',
+      formName: 'Nume',
+      formEmail: 'Email',
+      formService: 'Serviciu',
+      formServicePlaceholder: 'Alege serviciul dorit',
+      formOptWebsite: 'Website la Comandă',
+      formOptDesign: 'UI/UX Design',
+      formOptAutomation: 'Automatizări & Integrări',
+      formOptAI: 'Automatizări cu AI',
+      formOptOther: 'Altceva',
+      formMessage: 'Mesaj',
+      formTextareaPlaceholder: 'Descrie-mi proiectul tău...',
+      formSubmit: 'Trimite un mesaj',
+      footerCopy: '© 2026 Brady Software. Toate drepturile rezervate.',
+      footerMade: 'Construit cu <span>♥</span> în Cluj-Napoca, România'
+    },
+    de: {
+      loaderLocation: 'Cluj-Napoca, Rumänien',
+      navServices: 'Dienste',
+      navPortfolio: 'Portfolio',
+      navAbout: 'Über mich',
+      navProcess: 'Prozess',
+      navContact: 'Kontakt →',
+      navContact2: 'Kontakt',
+      mobileHome: 'Startseite',
+      mobileContact: 'Kontakt',
+      heroBadge: 'Verfügbar für neue Projekte',
+      heroLine1: 'Wir verwandeln',
+      heroLine2: 'deine Ideen in',
+      heroLine3: 'außergewöhnliche',
+      heroLine4: '<span class="gold">digitale</span> Erlebnisse',
+      heroSub: 'Web Development &nbsp;•&nbsp; UI/UX Design &nbsp;•&nbsp; KI-Automatisierung',
+      heroBtnPrimary: 'Lass uns zusammenarbeiten',
+      heroBtnSecondary: 'Portfolio ansehen',
+      marqueeAiAuto: 'KI-Automatisierung',
+      servicesSectionTitle: 'Alles was du für deine<br>Online-Präsenz brauchst',
+      servicesSectionSub: 'Von einer einfachen Website bis zu komplexen Systemen — wir liefern vollständige Lösungen für Ihr Unternehmen.',
+      service01Name: 'Maßgeschneiderte Websites',
+      service01Desc: 'Moderne, schnelle und SEO-optimierte Websites, perfekt auf Ihre Marke abgestimmt. Maximale Performance auf jedem Gerät.',
+      service02Name: 'UI/UX Design',
+      service02Desc: 'Elegante Benutzeroberflächen, die Besucher in Kunden verwandeln. Intuitives, ästhetisches und konversionsorientiertes Design.',
+      service03Name: 'Automatisierungen & Integrationen',
+      service03Desc: 'Systeme, die 24/7 für Sie arbeiten. Wir automatisieren repetitive Prozesse und integrieren Tools für maximale Effizienz.',
+      service04Name: 'KI-Automatisierungen',
+      service04Desc: 'Intelligente Lösungen, die Ihnen Zeit und Geld sparen. Wir integrieren KI in Ihre Prozesse für echte Wettbewerbsvorteile.',
+      serviceLearnMore: 'Mehr erfahren',
+      portfolioSectionTitle: 'Projekte, auf die<br>wir stolz sind',
+      portfolioBtnCta: 'Ihr Projekt?',
+      portfolioVisit: 'Website besuchen',
+      aboutLabel: 'Über mich',
+      aboutTitle: 'Tudor Bradescu —<br>Web Developer',
+      aboutText: 'Freiberufler mit <strong>Leidenschaft für modernes Web Development</strong> aus Cluj-Napoca, spezialisiert auf digitale Lösungen für Unternehmen.<br><br>Ich entwickle Websites und Web-Apps, die nicht nur gut aussehen — sondern <strong>perfekt funktionieren</strong> und meinen Kunden echte Ergebnisse liefern.<br><br>Jedes Projekt erhält <strong>vollständige Aufmerksamkeit</strong> und wird nach höchsten Qualitätsstandards geliefert.',
+      statYears: 'Jahre Erfahrung',
+      statClients: 'Zufriedene Kunden',
+      statSupport: 'Support rund um die Uhr',
+      processLabel: 'Wie ich arbeite',
+      processTitle: 'Ein einfacher Prozess,<br>außergewöhnliche Ergebnisse',
+      processSub: 'Von der ersten Besprechung bis zum Launch — ein transparenter, effizienter Prozess ohne Überraschungen.',
+      step01Name: 'Beratung & Analyse',
+      step01Desc: 'Wir verstehen Ihre Bedürfnisse und Ziele. Wir analysieren den Markt, den Wettbewerb und die Zielgruppe, um eine solide Strategie zu entwickeln.',
+      step02Name: 'Design & Prototyp',
+      step02Desc: 'Wir erstellen das Visuelle vor dem Code. Sie erhalten Wireframes und Mockups zur Genehmigung — keine Überraschungen am Ende.',
+      step03Name: 'Entwicklung & Testing',
+      step03Desc: 'Sauberer, performanter und skalierbarer Code. Wir testen auf allen Geräten und Browsern für ein tadelloses Ergebnis.',
+      step04Name: 'Launch & Support',
+      step04Desc: 'Wir sind nach dem Launch dabei. Wir bieten kontinuierlichen Support, Updates und Optimierungen, um die Website an der Spitze zu halten.',
+      marqueePremiumQuality: 'Premium Qualität',
+      marqueeOnTime: 'Pünktliche Lieferung',
+      marqueeSupport247: 'Support 24/7',
+      marqueeSatisfaction: '100% Zufriedenheit',
+      marqueeModernDesign: 'Modernes Design',
+      marqueeSEO: 'SEO Optimiert',
+      marqueeCleanCode: 'Sauberer Code',
+      contactTitle: 'Lass uns gemeinsam<br>etwas <em>Außergewöhnliches</em><br>bauen',
+      contactDesc: 'Haben Sie ein Projekt? Schreiben Sie mir und ich antworte innerhalb von 24 Stunden mit einem personalisierten Angebot.',
+      formName: 'Name',
+      formEmail: 'E-Mail',
+      formService: 'Dienst',
+      formServicePlaceholder: 'Gewünschten Dienst wählen',
+      formOptWebsite: 'Maßgeschneiderte Website',
+      formOptDesign: 'UI/UX Design',
+      formOptAutomation: 'Automatisierungen & Integrationen',
+      formOptAI: 'KI-Automatisierungen',
+      formOptOther: 'Sonstiges',
+      formMessage: 'Nachricht',
+      formTextareaPlaceholder: 'Beschreiben Sie mir Ihr Projekt...',
+      formSubmit: 'Nachricht senden',
+      footerCopy: '© 2026 Brady Software. Alle Rechte vorbehalten.',
+      footerMade: 'Mit <span>♥</span> gebaut in Cluj-Napoca, Rumänien'
+    }
+  };
+
+  // Keys that use innerHTML (contain HTML tags)
+  var htmlKeys = ['heroLine4', 'heroSub', 'servicesSectionTitle', 'portfolioSectionTitle',
+                  'aboutTitle', 'aboutText', 'processTitle', 'contactTitle',
+                  'footerMade', 'contactTitle'];
+
+  function applyLanguage(lang) {
+    if (lang !== 'de') lang = 'ro';
+    currentLang = lang;
+
+    // Update <html lang> attribute
+    document.getElementById('html-root').setAttribute('lang', lang);
+
+    // Update flag button (shows the OTHER language you can switch to)
+    var flagEl = document.getElementById('lang-flag');
+    if (flagEl) flagEl.textContent = lang === 'de' ? '🇷🇴' : '🇩🇪';
+
+    var t = translations[lang];
+
+    // Handle data-i18n (textContent)
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) {
+        // Check if this key has HTML — if so use innerHTML
+        if (htmlKeys.indexOf(key) !== -1) {
+          el.innerHTML = t[key];
+        } else {
+          el.textContent = t[key];
+        }
+      }
+    });
+
+    // Handle data-i18n-html (innerHTML explicitly)
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-html');
+      if (t[key] !== undefined) {
+        el.innerHTML = t[key];
+      }
+    });
+
+    // Handle data-i18n-placeholder (textarea/input placeholders)
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (t[key] !== undefined) {
+        el.setAttribute('placeholder', t[key]);
+      }
+    });
+  }
+
+  function switchLanguage(lang) {
+    var url = new URL(window.location.href);
+    if (lang === 'ro') {
+      url.searchParams.delete('lang');
+    } else {
+      url.searchParams.set('lang', lang);
+    }
+    history.pushState({lang: lang}, '', url.toString());
+    applyLanguage(lang);
+  }
+
+  // Apply on page load
+  applyLanguage(currentLang);
   </script>
 </body>
 </html>
