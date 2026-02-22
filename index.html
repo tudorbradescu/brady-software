@@ -2216,32 +2216,40 @@
     e.preventDefault();
     const form = e.target;
     const btn = form.querySelector('.form-submit');
-    const name = form.querySelector('#name').value;
-    const email = form.querySelector('#email').value;
-    const service = form.querySelector('#service').value;
-    const message = form.querySelector('#message').value;
-
     const iDE = (typeof currentLang !== 'undefined' && currentLang === 'de');
-    btn.textContent = iDE ? 'Wird gesendet...' : 'Se trimite...';
+
+    btn.innerHTML = (iDE ? 'Wird gesendet...' : 'Se trimite...') + ' <i class="fa-solid fa-spinner fa-spin"></i>';
     btn.disabled = true;
 
-    // Build mailto link
-    const subject = encodeURIComponent(iDE ? 'Neues Projekt — Brady Software' : 'Proiect nou — Brady Software');
-    const body = encodeURIComponent(
-      (iDE ? 'Guten Tag,\n\nName: ' : 'Buna ziua,\n\nNume: ') + name +
-      '\nEmail: ' + email +
-      '\nServiciu: ' + service +
-      '\n\nMesaj:\n' + message +
-      '\n\n---\nTrimis prin brady-software.ro'
-    );
+    const data = {
+      name:    form.querySelector('#name').value,
+      email:   form.querySelector('#email').value,
+      service: form.querySelector('#service').value,
+      message: form.querySelector('#message').value,
+      _subject: iDE ? 'Neues Projekt — Brady Software' : 'Proiect nou — Brady Software'
+    };
 
-    window.location.href = 'mailto:tudor@bradysoftware.ro?subject=' + subject + '&body=' + body;
-
-    setTimeout(function() {
-      btn.innerHTML = iDE ? '✓ Nachricht gesendet! <i class="fa-solid fa-check"></i>' : '✓ Mesaj trimis! <i class="fa-solid fa-check"></i>';
-      btn.style.background = '#10b981';
+    fetch('https://formspree.io/f/maqdprgj', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function(res) {
+      if (res.ok) {
+        btn.innerHTML = (iDE ? '✓ Nachricht gesendet!' : '✓ Mesaj trimis!') + ' <i class="fa-solid fa-check"></i>';
+        btn.style.background = '#10b981';
+        form.reset();
+      } else {
+        btn.innerHTML = (iDE ? '✗ Fehler. Bitte erneut versuchen.' : '✗ Eroare. Încearcă din nou.') + ' <i class="fa-solid fa-xmark"></i>';
+        btn.style.background = '#ef4444';
+      }
       btn.disabled = false;
-    }, 1500);
+    })
+    .catch(function() {
+      btn.innerHTML = (iDE ? '✗ Fehler. Bitte erneut versuchen.' : '✗ Eroare. Încearcă din nou.') + ' <i class="fa-solid fa-xmark"></i>';
+      btn.style.background = '#ef4444';
+      btn.disabled = false;
+    });
   }
 
   // ──────────────────────────────────────────────────────────────
