@@ -132,7 +132,7 @@ const cases = [
     title: 'Din industria auto: borduri și head-up display-uri pentru Porsche și Lamborghini',
     meta: 'Aproximativ 10 ani de software automotive: programare ECU automată, testare cu recunoaștere de imagine, calibrare head-up display, CI/CD. Porsche, Lamborghini, anterior VAG, Fiat, Daimler.',
     status: ['live', 'Experiență, nu serviciu'],
-    lead: 'Aproximativ zece ani am livrat software pentru borduri și head-up display-uri. Acum pentru Porsche și Lamborghini, prin Arobs, pentru Aumovio. Anterior pentru VAG, Fiat și Daimler.',
+    lead: 'Aproximativ zece ani am livrat software pentru borduri și head-up display-uri. Acum pentru Porsche și Lamborghini, prin Arobs. Anterior pentru VAG, Fiat și Daimler.',
     tech: 'CI/CD, testare automată, recunoaștere de imagine, programare ECU, calibrare cu cameră și motoare',
     fig: dgAuto,
     caption: 'Lanțul de livrare la care am lucrat, simplificat.',
@@ -166,7 +166,7 @@ for (const [i, c] of cases.entries()) {
 <div class="wrap article">
   <aside class="article-aside" aria-label="Fișa proiectului">
     <dl>
-      <dt>Client</dt><dd>${c.slug === 'industria-auto' ? 'Porsche, Lamborghini (prin Arobs, pentru Aumovio)' : CLIENT.charAt(0).toUpperCase() + CLIENT.slice(1)}</dd>
+      <dt>Client</dt><dd>${c.slug === 'industria-auto' ? 'Porsche, Lamborghini (prin Arobs)' : CLIENT.charAt(0).toUpperCase() + CLIENT.slice(1)}</dd>
       <dt>Stadiu</dt><dd><span class="status ${c.status[0]}">${c.status[1]}</span></dd>
       <dt>Tehnologie</dt><dd>${c.tech}</dd>
     </dl>
@@ -454,7 +454,7 @@ const despre = `
       <li><span class="yr">2018–2020</span><span>Coordonator al programului de internship Arobs.</span></li>
       <li><span class="yr">pe parcurs</span><span>Product Owner pentru trei echipe, Scrum Master.</span></li>
       <li><span class="yr">2023</span><span>Înființez Brady Software SRL.</span></li>
-      <li><span class="yr">acum</span><span>Proiecte auto pentru Porsche și Lamborghini (prin Arobs, pentru Aumovio) și automatizări pentru firme românești.</span></li>
+      <li><span class="yr">acum</span><span>Proiecte auto pentru Porsche și Lamborghini (prin Arobs) și automatizări pentru firme românești.</span></li>
     </ol>
 
     <h2>De ce automatizări pentru firme de producție</h2>

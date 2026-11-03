@@ -3,7 +3,7 @@
 Decizii pe care BRIEF.md nu le acoperea complet. Am ales varianta cea mai prudentă; confirmă sau corectează.
 
 1. **Durata diagnosticului.** BRIEF spune o dată „2–3 ore” și o dată „Gratuit, 2 ore”. Pe site scrie „aproximativ 2 ore”. Corect?
-2. **Aumovio.** Apare în BRIEF (secțiunea 6F) ca client final al Arobs. L-am menționat doar pe pagina /studii-de-caz/industria-auto/ și pe /despre. Ai voie să-l numești public?
+2. ~~**Aumovio.**~~ Rezolvat (Tudor, 2026-11-03): Aumovio nu se numește public; Arobs da. Scos de pe site.
 3. **Consultanța HR (studiul E).** BRIEF are doar titlul. Pagina descrie rolul (om tehnic de partea clientului) fără rezultate sau detalii. Ce soft s-a ales și ce ai voie să spui?
 4. **Proiectul UE de 1,5 M€.** Nu am pus numele programului de finanțare, durata sau rolul exact. Dacă există o pagină publică a proiectului (obligatorie la finanțările UE), un link ar crește încrederea.
 5. **„Tehnologie” la studiile A și B.** Am scris doar ce e în BRIEF (EDI, email, ERP Mentor). Limbajele, hostingul sau aplicația folosită pe telefon (B) nu apar. Vrei să le adaugi?
