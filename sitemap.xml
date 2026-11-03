@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- Romanian version (default) -->
-  <url>
-    <loc>https://bradysoftware.ro/</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://bradysoftware.ro/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bradysoftware.ro/?lang=de"/>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- German version -->
-  <url>
-    <loc>https://bradysoftware.ro/?lang=de</loc>
-    <xhtml:link rel="alternate" hreflang="ro" href="https://bradysoftware.ro/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://bradysoftware.ro/?lang=de"/>
-    <lastmod>2026-02-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://bradysoftware.ro/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://bradysoftware.ro/diagnostic/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://bradysoftware.ro/studii-de-caz/comenzi-lidl-rewe-metro-erp/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://bradysoftware.ro/studii-de-caz/livrari-pe-telefonul-patronului/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://bradysoftware.ro/studii-de-caz/proiect-european-paletizare/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://bradysoftware.ro/studii-de-caz/inspectie-etichete-banda/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://bradysoftware.ro/studii-de-caz/consultanta-soft-hr/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://bradysoftware.ro/studii-de-caz/industria-auto/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://bradysoftware.ro/despre/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://bradysoftware.ro/site-uri/</loc><lastmod>2026-11-03</lastmod></url>
 </urlset>
