@@ -5,7 +5,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   layout, tblock, ctaFinal, icon, SITE, PHONE_HREF, PHONE_TXT, PHONE_INTL, WA_MSG, MAIL,
-  dgOrders, dgPhone, dgPallet, dgConveyor, dgAuto,
+  dgOrders, dgPhone, dgPallet, dgConveyor, dgAuto, dgCoaching,
 } from './parts.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -27,7 +27,7 @@ const cases = [
     meta: 'Studiu de caz: integrare EDI și email cu ERP-ul Mentor pentru un producător alimentar. Comenzile nu mai sunt retastate, regulile rulează singure.',
     status: ['live', 'Livrat · în producție'],
     lead: 'Aproximativ 20 de comenzi pe zi, pe EDI și pe email, erau introduse de mână în ERP. Acum intră singure, cu regulile firmei aplicate de fiecare dată la fel.',
-    tech: 'EDI, email, ERP Mentor, reguli de business scrise în cod',
+    tech: 'Python + FastAPI, Playwright, PDF și XML, WinMentor REST API, Vue 3, Docker',
     fig: dgOrders,
     caption: 'Fluxul comenzilor. Schemă desenată pentru site, fără date ale clientului.',
     body: `
@@ -45,7 +45,14 @@ const cases = [
   <li>Erorile din EDI sunt corectate la fel de fiecare dată.</li>
 </ul>
 <h2>Tehnologie, pe scurt</h2>
-<p>Preluare EDI și email, regulile firmei scrise în cod, creare automată de comenzi în ERP-ul Mentor.</p>`,
+<ul>
+  <li><strong>Preluarea comenzilor:</strong> Playwright descarcă automat comenzile din portalurile EDI ale retailerilor (PDF și XML).</li>
+  <li><strong>Citirea lor:</strong> parsere în Python pentru PDF (pdfplumber) și XML, câte unul pentru formatul fiecărui retailer.</li>
+  <li><strong>Regulile firmei:</strong> mapări de articole, coduri GLN de livrare, prețuri din ofertele clienților, scrise în cod și în fișiere de configurare pe care le poți verifica.</li>
+  <li><strong>Crearea comenzii:</strong> prin API-ul REST al WinMentor, direct în ERP.</li>
+  <li><strong>Panou de control:</strong> aplicație web în Vue 3, cu istoricul comenzilor trimise și rapoarte.</li>
+  <li><strong>Rulare:</strong> backend FastAPI în Docker Compose, pe serverul clientului.</li>
+</ul>`,
   },
   {
     slug: 'livrari-pe-telefonul-patronului',
@@ -54,7 +61,7 @@ const cases = [
     meta: 'Studiu de caz: datele din ERP ajung pe telefonul patronului. Câți paleți se livrează azi și unde, fără telefoane la birou și fără Excel.',
     status: ['live', 'Livrat recent'],
     lead: 'Patronul vede pe telefon, pentru fiecare zi, câți paleți trebuie livrați și unde. Fără să sune la birou și fără să ceară un Excel.',
-    tech: 'Date din ERP, afișate pe telefon',
+    tech: 'Vue 3, FastAPI, date din WinMentor',
     fig: dgPhone,
     caption: 'Schemă: din ERP pe telefon. Rândurile sunt goale intenționat; datele clientului nu apar pe site.',
     body: `
@@ -69,7 +76,7 @@ const cases = [
   <li>Biroul nu mai pregătește situații separate doar ca să răspundă la întrebarea „ce pleacă azi?”.</li>
 </ul>
 <h2>Tehnologie, pe scurt</h2>
-<p>Citirea datelor din ERP și afișarea lor pe telefon, într-o formă pe care o înțelegi dintr-o privire.</p>`,
+<p>Același backend Python (FastAPI) care trimite comenzile în WinMentor calculează și paleții de livrat pe fiecare zi. Patronul îi vede într-o pagină web făcută în Vue 3, deschisă din browserul telefonului, fără aplicație de instalat.</p>`,
   },
   {
     slug: 'proiect-european-paletizare',
@@ -123,8 +130,7 @@ const cases = [
 <h2>Ce am făcut</h2>
 <p>Am lucrat cu firma la alegerea unui soft de HR. Rolul meu a fost de om tehnic de partea clientului: să traduc ofertele furnizorilor în limbajul firmei și să separ ce îi trebuie de ce doar arată bine într-o demonstrație.</p>
 <h2>De ce ar conta pentru voi</h2>
-<p>La un ERP sau la un soft de HR, greșeala scumpă nu e prețul licenței. E să plătiți ani de zile pentru module pe care nu le folosiți, sau să descoperiți după implementare că lipsește exact funcția de care aveați nevoie.</p>
-<p>Nu vând licențe și nu primesc comision de la furnizori. Asta îmi permite să vă spun ce cred, inclusiv că nu aveți nevoie de un soft nou.</p>`,
+<p>La un ERP sau la un soft de HR, greșeala scumpă nu e prețul licenței. E să plătiți ani de zile pentru module pe care nu le folosiți, sau să descoperiți după implementare că lipsește exact funcția de care aveați nevoie.</p>`,
   },
   {
     slug: 'industria-auto',
@@ -198,7 +204,7 @@ const problems = [
   ['Comenzile vin pe EDI și pe email, iar cineva le retastează în ERP.', 'Comenzile intră direct în ERP, cu regulile firmei aplicate automat.', 'Comenzi automate în ERP'],
   ['Ca să afli ce se livrează azi, suni la birou sau aștepți un Excel.', 'Datele din ERP ajung pe telefonul tău: ce pleacă azi, unde și cât.', 'Informație pe telefon'],
   ['O etichetă cu lotul greșit înseamnă retur și penalitate de la retailer.', 'Cameră pe bandă și software care citește eticheta și semnalează lotul greșit. Serviciu în dezvoltare.', 'Inspecție vizuală pe linie'],
-  ['Procedurile și fișele tehnice stau în zeci de documente pe care nu le găsește nimeni.', 'Un asistent AI răspunde angajaților din documentele voastre. Am construit deja așa ceva pentru echipe de ingineri.', 'Asistent AI pe documente'],
+  ['Procedurile și fișele tehnice stau în zeci de documente pe care nu le găsește nimeni.', 'Un asistent AI răspunde angajaților din documentele voastre. Am construit deja așa ceva pentru echipe de ingineri la Arobs.', 'Asistent AI pe documente'],
   ['Rapoartele se fac de mână: copiat din ERP în Excel, apoi trimis pe email.', 'Legături între ERP, Excel, email și aplicații. Raportul se face singur.', 'Integrări și rapoarte'],
   ['Trebuie ales un ERP sau un soft de HR, iar fiecare vânzător spune că al lui e cel mai bun.', 'Vă ajut să alegeți ce vă trebuie, fără să plătiți funcții pe care nu le folosiți.', 'Consultanță la alegerea softului'],
 ];
@@ -300,7 +306,7 @@ const home = `
       <p class="lead">Pași mici, fiecare cu un rezultat pe care îl vedeți înainte să decideți următorul pas.</p>
     </div>
     <ol class="steps">
-      <li><h3>Diagnostic</h3><p>Aproximativ 2 ore, la voi sau online. Plecați cu lista scrisă de 3–5 automatizări posibile, cu timp și cost estimat. Gratuit.</p></li>
+      <li><h3>Diagnostic</h3><p>2 ore, la voi sau online. Plecați cu lista scrisă de 3–5 automatizări posibile, cu timp și cost estimat. Gratuit.</p></li>
       <li><h3>Prototip</h3><p>Construiesc întâi o variantă mică, pe datele voastre reale. Vedeți că funcționează înainte de un angajament mare.</p></li>
       <li><h3>Implementare</h3><p>Sistemul intră în lucru lângă oamenii care îl folosesc. Regulile le verificăm împreună cu ei, nu doar cu mine.</p></li>
       <li><h3>Suport</h3><p>Când se schimbă ceva în ERP sau la un client, ajustez software-ul. Vorbiți cu omul care l-a scris.</p></li>
@@ -354,7 +360,7 @@ const dx = `
     <section class="tblock" aria-label="Fișa diagnosticului">
       <div class="tblock-title"><strong>Ce primiți</strong><span>GRATUIT</span></div>
       <dl>
-        <dt>Durată</dt><dd>Aproximativ 2 ore</dd>
+        <dt>Durată</dt><dd>2 ore</dd>
         <dt>Unde</dt><dd>La sediul vostru, în zona Sibiu și Cluj, sau online</dd>
         <dt>Cu cine</dt><dd>Cu mine, direct. Plus oamenii care fac munca pe care vreți s-o automatizați</dd>
         <dt>Primiți</dt><dd><strong>O listă scrisă cu 3–5 automatizări posibile</strong>, cu timp și cost estimat</dd>
@@ -390,7 +396,7 @@ const dx = `
   <div class="wrap split">
     <div>
       <h2 id="form-h">Lăsați-mi datele. Vă sun eu.</h2>
-      <p class="lead" style="margin-top:16px">Patru câmpuri, sub un minut. Dacă preferați, scrieți direct pe <a href="${WA_MSG}">WhatsApp</a> sau la <a href="mailto:${MAIL}">${MAIL}</a>.</p>
+      <p class="lead" style="margin-top:16px">Vă sun în aceeași zi lucrătoare. Patru câmpuri, sub un minut. Dacă preferați, scrieți direct pe <a href="${WA_MSG}">WhatsApp</a> sau la <a href="mailto:${MAIL}">${MAIL}</a>.</p>
     </div>
     <form class="form" id="dx-form" action="https://formspree.io/f/maqdprgj" method="POST" novalidate>
       <input type="hidden" name="sursa" value="diagnostic-site">
@@ -486,7 +492,7 @@ out('/despre/', layout({
 const sites = [
   ['Garduri Beton Sibiu', 'https://gardbetonsibiu.ro', 'gardbetonsibiu', 'Site de prezentare pentru afacerea familiei: producție de garduri din beton în Sibiu.'],
   ['Monumente Funerare Cristian', 'https://monumentefunerarecristian.ro', 'monumentefunerarecristian', 'Tot pentru afacerea familiei: monumente funerare. Prezentarea produselor și datele de contact.'],
-  ['Platformă de coaching fitness pentru Radu Mocuța', 'https://radumocutacoachingplatform.github.io/home/', 'radumocuta', 'Platformă web cu cont de client pentru coaching-ul de fitness al lui Radu Mocuța. Prima pagină publică este cea de autentificare.'],
+  ['Platformă de coaching fitness pentru Radu Mocuța', 'https://radumocutacoachingplatform.github.io/home/', 'radumocuta', 'Platformă web pentru clienții de coaching fitness ai lui Radu Mocuța: module de antrenament, check-in-uri, sesiuni live și un flux de noutăți. Radu are un panou de administrare pentru clienți și conținut. Construită cu Vue 3 și Supabase. Public se vede doar pagina de autentificare; schema de mai jos arată ce e în spatele ei.'],
 ];
 
 const siteuri = `
@@ -505,6 +511,7 @@ const siteuri = `
         <h2 style="font-size:clamp(1.4rem,1.2rem + 1vw,1.9rem)">${name}</h2>
         <p class="muted" style="margin-top:12px">${desc}</p>
         <p><a class="mono" href="${url}">${url.replace('https://', '').replace(/\/$/, '')}</a></p>
+        ${img === 'radumocuta' ? `<figure class="fig" style="margin-top:24px">${dgCoaching()}<figcaption>Schemă desenată după codul sursă al platformei. Nu e o captură de ecran.</figcaption></figure>` : ''}
       </div>
     </article>`).join('\n    ')}
   </div>

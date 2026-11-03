@@ -49,7 +49,7 @@
         if (!r.ok) throw new Error(r.status);
         form.reset();
         if (src) form.elements.sursa.value = 'diagnostic-' + src.replace(/[^a-z0-9_-]/gi, '').slice(0, 40);
-        show('ok', 'Am primit cererea. Vă sun la numărul lăsat ca să stabilim ziua diagnosticului.');
+        show('ok', 'Am primit cererea. Vă sun în aceeași zi lucrătoare ca să stabilim ziua diagnosticului.');
       })
       .catch(function () {
         show('err', 'Cererea nu a plecat. Verificați conexiunea și încercați din nou, sau sunați direct la 0727 819 906.');

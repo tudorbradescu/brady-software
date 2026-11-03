@@ -86,7 +86,7 @@ export function tblock({ cta = 'form', dark = false, heading = 'h2' } = {}) {
     <div class="tblock-title"><${heading === 'h1' ? 'strong' : 'strong'}>Diagnostic de automatizare</strong><span>GRATUIT</span></div>
     <dl>
       <dt>Ce faceți</dt><dd>Îmi arătați cum circulă o comandă, un document sau un produs prin firmă.</dd>
-      <dt>Durată</dt><dd>Aproximativ 2 ore</dd>
+      <dt>Durată</dt><dd>2 ore</dd>
       <dt>Unde</dt><dd>La sediul vostru, în zona Sibiu și Cluj, sau online</dd>
       <dt>Primiți</dt><dd><strong>O listă scrisă cu 3–5 lucruri care se pot automatiza</strong>, fiecare cu estimare de timp și cost</dd>
       <dt>Obligații</dt><dd>Niciuna</dd>
@@ -286,5 +286,20 @@ export function dgAuto(id = 'f') {
   return `<svg class="dg" viewBox="0 0 400 ${steps.length * (h + gap) - gap + 2}" role="img" aria-labelledby="t-${id}">
   <title id="t-${id}">Lanțul de livrare a software-ului auto la care am lucrat: cod de la echipe din mai multe țări, pipeline CI/CD, testare automată cu recunoaștere de imagine, programare ECU peste noapte, calibrare head-up display cu cameră și motoare, release în linia de producție.</title>
   ${out}
+</svg>`;
+}
+
+// Platforma de coaching: structură, desenată după codul sursă public
+export function dgCoaching(id = 'rm') {
+  const col = (x, title, items, ink) => `<rect class="${ink ? 'box-ink' : 'box'}" x="${x}" y="1" width="180" height="34"/><text class="t-lg${ink ? ' t-inv' : ''}" x="${x + 14}" y="24">${title}</text>` +
+    items.map((t, i) => `<rect class="box-2" x="${x}" y="${47 + i * 38}" width="180" height="30"/><text x="${x + 14}" y="${67 + i * 38}">${t}</text>`).join('');
+  return `<svg class="dg" viewBox="0 0 400 290" role="img" aria-labelledby="t-${id}">
+  <title id="t-${id}">Schema platformei de coaching: clienții au module, check-in, flux de noutăți și sesiuni live; antrenorul are un panou de administrare pentru clienți, check-in-uri, module și sesiuni live; datele stau în Supabase.</title>
+  ${col(1, 'Client', ['Module', 'Check-in', 'Noutăți', 'Sesiuni live'])}
+  ${col(219, 'Antrenor', ['Clienți', 'Check-in-uri', 'Module', 'Sesiuni live'], true)}
+  <path class="flow" d="M91 200V236M309 200V236"/>
+  <rect class="box-sig" x="1" y="238" width="398" height="50"/>
+  <text class="t-lg" x="200" y="260" text-anchor="middle">Supabase</text>
+  <text x="200" y="279" text-anchor="middle" style="font-size:12px">conturi, date, autentificare</text>
 </svg>`;
 }

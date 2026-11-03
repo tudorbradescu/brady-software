@@ -50,7 +50,7 @@
     <dl>
       <dt>Client</dt><dd>Un producător alimentar din Transilvania, furnizor pentru Lidl, Rewe și Metro</dd>
       <dt>Stadiu</dt><dd><span class="status live">Livrat · în producție</span></dd>
-      <dt>Tehnologie</dt><dd>EDI, email, ERP Mentor, reguli de business scrise în cod</dd>
+      <dt>Tehnologie</dt><dd>Python + FastAPI, Playwright, PDF și XML, WinMentor REST API, Vue 3, Docker</dd>
     </dl>
   </aside>
   <article class="prose">
@@ -96,7 +96,14 @@
   <li>Erorile din EDI sunt corectate la fel de fiecare dată.</li>
 </ul>
 <h2>Tehnologie, pe scurt</h2>
-<p>Preluare EDI și email, regulile firmei scrise în cod, creare automată de comenzi în ERP-ul Mentor.</p>
+<ul>
+  <li><strong>Preluarea comenzilor:</strong> Playwright descarcă automat comenzile din portalurile EDI ale retailerilor (PDF și XML).</li>
+  <li><strong>Citirea lor:</strong> parsere în Python pentru PDF (pdfplumber) și XML, câte unul pentru formatul fiecărui retailer.</li>
+  <li><strong>Regulile firmei:</strong> mapări de articole, coduri GLN de livrare, prețuri din ofertele clienților, scrise în cod și în fișiere de configurare pe care le poți verifica.</li>
+  <li><strong>Crearea comenzii:</strong> prin API-ul REST al WinMentor, direct în ERP.</li>
+  <li><strong>Panou de control:</strong> aplicație web în Vue 3, cu istoricul comenzilor trimise și rapoarte.</li>
+  <li><strong>Rulare:</strong> backend FastAPI în Docker Compose, pe serverul clientului.</li>
+</ul>
   </article>
 </div>
 <div class="wrap"><nav class="next-case" aria-label="Următorul studiu de caz"><span class="muted">Următorul studiu de caz</span><a href="/studii-de-caz/livrari-pe-telefonul-patronului/">Livrările zilei, pe telefonul patronului →</a></nav></div>
@@ -110,7 +117,7 @@
     <div class="tblock-title"><strong>Diagnostic de automatizare</strong><span>GRATUIT</span></div>
     <dl>
       <dt>Ce faceți</dt><dd>Îmi arătați cum circulă o comandă, un document sau un produs prin firmă.</dd>
-      <dt>Durată</dt><dd>Aproximativ 2 ore</dd>
+      <dt>Durată</dt><dd>2 ore</dd>
       <dt>Unde</dt><dd>La sediul vostru, în zona Sibiu și Cluj, sau online</dd>
       <dt>Primiți</dt><dd><strong>O listă scrisă cu 3–5 lucruri care se pot automatiza</strong>, fiecare cu estimare de timp și cost</dd>
       <dt>Obligații</dt><dd>Niciuna</dd>
