@@ -1,1 +1,6 @@
 /diagnostic  /diagnostic/index.html  200
+/BRIEF.md  /404.html  404!
+/DESIGN.md  /404.html  404!
+/PRODUCT.md  /404.html  404!
+/OPEN_QUESTIONS.md  /404.html  404!
+/_src/*  /404.html  404!
