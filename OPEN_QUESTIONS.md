@@ -18,3 +18,14 @@
 ## Deschise
 
 - În istoricul repo-ului de automatizări există commitul „Mark automation pipeline as DO NOT USE (business decision)”. Pe site, studiul A spune „Livrat · în producție” și „comenzile intră singure”, conform BRIEF. Dacă rularea automată e oprită acum, formularea trebuie ajustată.
+
+## Noi, după review-ul cu 10 agenți (2026-11-03)
+
+- **Repo-ul GitHub e public.** BRIEF.md (cu Aumovio) și OPEN_QUESTIONS.md sunt vizibile pe github.com/tudorbradescu/brady-software, chiar dacă site-ul le blochează. Recomandare: fă repo-ul privat (Netlify merge și din repo privat). Ștergerea fișierelor nu ajunge, istoricul git le păstrează.
+- **Promisiuni noi pe /diagnostic**, de confirmat:
+  - „La diagnostic nu am nevoie de acces în ERP.”
+  - „Dacă vreți să mergem mai departe, începem cu un prototip mic, pe datele voastre.”
+  - „Software-ul rulează pe serverul vostru, iar regulile firmei stau în fișiere pe care le puteți citi.” (adevărat la comenzi; e general ca promisiune)
+  - „Răspund eu la telefon și tot eu scriu software-ul.”
+- **Link scurt pentru QR:** `bradysoftware.ro/ebh` duce la `/diagnostic/?utm_source=ebh&utm_medium=qr` (cod QR mai puțin dens).
+- **Rămâne deschis:** commitul „DO NOT USE” din repo-ul de automatizări vs „Livrat · în producție” pe site.

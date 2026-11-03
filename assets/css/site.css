@@ -377,3 +377,69 @@ figure { margin: 0; }
 @media (max-width: 719px) { .hide-sm { display: none; } }
 .more-cases { margin-top: var(--s5); padding-top: var(--s4); border-top: 1px solid var(--ink); max-width: none; }
 @media (min-width: 960px) { .steps-3 { grid-template-columns: repeat(3, 1fr); } }
+
+/* ===== review 2026-11-03 ===== */
+h1, h2, h3 { line-height: 1.08; }
+.cta-final h2 { line-height: 1.1; }
+
+/* indicator cu celule (ISO 7200) */
+.tblock { border: 2px solid var(--ink); }
+.tblock-title { justify-content: flex-start; }
+.tblock dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--ink); border-bottom: 1px solid var(--ink); }
+.tblock dl > div { background: var(--paper-2); padding: 8px 14px 12px; min-width: 0; }
+.tblock dl > .c-wide { grid-column: 1 / -1; }
+.tblock dt, .tblock dd { border: 0; padding: 0; }
+.tblock dt { margin: 0 0 4px; font-size: 0.6875rem; letter-spacing: 0.05em; border-right: 0; padding-top: 0; }
+.tblock dd { margin: 0; line-height: 1.4; }
+.tblock .tb-big { font-stretch: 80%; font-weight: 760; font-size: 1.75rem; line-height: 1.05; letter-spacing: -0.01em; }
+.tblock-foot { border-top: 0; }
+.tblock:not(:has(.tblock-foot)) dl { border-bottom: 0; }
+
+/* CTA final: hârtie adâncită, nu bandă galbenă */
+.cta-final { background: var(--paper-2); color: var(--ink); border-top: 6px solid var(--ink); }
+.cta-final .lead { color: var(--ink-2); }
+.cta-final .tblock dl > div { background: var(--paper); }
+
+/* o singură mișcare: fluxul comenzilor */
+.dg .flow { animation: none; }
+.dg .flow.live { animation: flow 1.6s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .dg .flow.live { animation: none; } }
+
+/* diagrame lizibile pe telefon */
+@media (max-width: 719px) {
+  .fig { padding: 10px; }
+  .fig figcaption { margin: 10px -10px -10px; padding: 10px; }
+  .dg text { font-size: 14px; }
+  .dg .t-sm { font-size: 13px; }
+  .dg .t-lg { font-size: 18px; }
+}
+.article .fig { max-width: 66ch; }
+.article .fig svg { max-width: 560px; }
+@media (min-width: 960px) { .case { align-items: start; } .case-body { padding-top: var(--s4); } }
+
+/* diagnostic */
+.event-note { display: inline-block; font-family: var(--mono); font-size: 0.8125rem; background: var(--signal); border: 1.5px solid var(--ink); padding: 6px 10px; margin-bottom: var(--s3); max-width: none; }
+.event-note[hidden] { display: none; }
+.proof-mini { list-style: none; margin: var(--s4) 0 0; padding: 0; border-top: 1px solid var(--ink); font-size: 0.9375rem; }
+.proof-mini li { padding: 10px 0 10px 20px; border-bottom: 1px solid var(--rule); position: relative; }
+.proof-mini li::before { content: ""; position: absolute; left: 0; top: 18px; width: 8px; height: 8px; background: var(--ink); }
+.dx-hero h1 { font-size: clamp(2.1rem, 1.4rem + 3.2vw, 4rem); max-width: 14ch; }
+.faq { margin: 0; border-top: 1.5px solid var(--ink); }
+.faq > div { padding: var(--s3) 0; border-bottom: 1px solid var(--rule); }
+.faq dt { font-weight: 650; font-stretch: 90%; font-size: 1.125rem; }
+.faq dd { margin: 6px 0 0; color: var(--ink-2); max-width: 60ch; }
+.form-status:empty { display: none; }
+.form-status:focus { outline: none; }
+.problems p a { color: var(--ink); font-weight: 600; }
+
+/* index studii de caz */
+.case-index { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--ink); }
+.case-index li { display: grid; gap: var(--s2); padding: var(--s5) 0; border-bottom: 1px solid var(--rule); justify-items: start; }
+.case-index h2 { font-size: clamp(1.4rem, 1.2rem + 1vw, 1.9rem); max-width: 26ch; }
+.case-index h2 a { text-decoration: none; }
+.case-index h2 a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+.case-index p { color: var(--ink-2); }
+@media (min-width: 960px) { .case-index li { grid-template-columns: 3fr 9fr; column-gap: var(--s6); } .case-index li > .status { grid-row: span 2; justify-self: start; margin-top: 8px; } }
+
+/* ținte de atingere în subsol și firimituri */
+.crumbs a { display: inline-block; padding: 6px 0; }

@@ -29,7 +29,7 @@
   <div class="wrap">
     <a class="brand" href="/" aria-label="Brady Software, pagina principală"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="26" height="26" fill="none" stroke="#1C1E20" stroke-width="2"/><path d="M1 17h26M15 17v10" stroke="#1C1E20" stroke-width="2"/><rect x="16" y="18" width="10" height="8" fill="#F2B705"/><path d="M6 6h7a3 3 0 0 1 0 6H6z" fill="#1C1E20"/></svg><span>Brady Software<small>automatizări · Sibiu / Cluj</small></span></a>
     <nav class="nav" aria-label="Principal">
-      <a href="/#studii" aria-current="page">Studii de caz</a>
+      <a href="/studii-de-caz/" aria-current="page">Studii de caz</a>
       <a href="/#cum-lucrez" class="hide-sm">Cum lucrez</a>
       <a href="/despre/">Despre</a>
       <a class="btn btn-signal" href="/diagnostic/">Diagnostic gratuit</a>
@@ -40,7 +40,7 @@
 
 <header class="page-head">
   <div class="wrap">
-    <p class="crumbs"><a href="/">Acasă</a> / <a href="/#studii">Studii de caz</a></p>
+    <p class="crumbs"><a href="/">Acasă</a> / <a href="/studii-de-caz/">Studii de caz</a></p>
     <h1>Comenzile de la Lidl, Rewe și Metro intră singure în ERP</h1>
     <p class="lead">Aproximativ 20 de comenzi pe zi, pe EDI și pe email, erau introduse de mână în ERP. Acum intră singure, cu regulile firmei aplicate de fiecare dată la fel.</p>
   </div>
@@ -50,7 +50,7 @@
     <dl>
       <dt>Client</dt><dd>Un producător alimentar din Transilvania, furnizor pentru Lidl, Rewe și Metro</dd>
       <dt>Stadiu</dt><dd><span class="status live">Livrat · în producție</span></dd>
-      <dt>Tehnologie</dt><dd>Python + FastAPI, Playwright, PDF și XML, WinMentor REST API, Vue 3, Docker</dd>
+      <dt>Tehnologie</dt><dd>Python + FastAPI, PDF și XML, WinMentor REST API, Vue 3, Docker</dd>
     </dl>
   </aside>
   <article class="prose">
@@ -63,7 +63,7 @@
   <rect class="box" x="1" y="1" width="118" height="52"/><text class="t-lg" x="60" y="25" text-anchor="middle">Lidl</text><text class="t-sm" x="60" y="42" text-anchor="middle">EDI · email</text>
   <rect class="box" x="141" y="1" width="118" height="52"/><text class="t-lg" x="200" y="25" text-anchor="middle">Rewe</text><text class="t-sm" x="200" y="42" text-anchor="middle">EDI · email</text>
   <rect class="box" x="281" y="1" width="118" height="52"/><text class="t-lg" x="340" y="25" text-anchor="middle">Metro</text><text class="t-sm" x="340" y="42" text-anchor="middle">EDI · email</text>
-  <path class="flow" d="M60 54V92H200M340 54V92H200M200 54V140"/>
+  <path class="flow live" d="M60 54V92H200M340 54V92H200M200 54V140"/>
   <text class="t-sm" x="206" y="118">~20 comenzi / zi</text>
   <path class="wire" d="M200 128V140" marker-end="url(#ah-come)"/>
   <rect class="box-ink" x="20" y="142" width="360" height="132"/>
@@ -73,14 +73,14 @@
   <text class="t-inv" x="40" y="244">3  corectează erorile din EDI</text>
   <rect x="300" y="186" width="64" height="64" fill="none" stroke="#F2B705" stroke-width="1.5"/>
   <path d="M312 202h40M312 214h40M312 226h28M312 238h34" stroke="#F2B705" stroke-width="1.5"/>
-  <path class="flow" d="M200 275V330"/>
+  <path class="flow live" d="M200 275V330"/>
   <path class="wire" d="M200 318V330" marker-end="url(#ah-come)"/>
   <rect class="box-2" x="90" y="332" width="220" height="56"/>
   <text class="t-lg" x="200" y="356" text-anchor="middle">ERP Mentor</text>
   <text class="t-sm" x="200" y="376" text-anchor="middle">comanda creată automat</text>
   <rect class="box-sig" x="230" y="396" width="169" height="22"/>
-  <text x="314" y="412" text-anchor="middle" style="font-size:11px">fără retastare</text>
-</svg><figcaption>Fluxul comenzilor. Schemă desenată pentru site, fără date ale clientului.</figcaption></figure>
+  <text x="314" y="412" text-anchor="middle" class="t-sm" style="fill:#1C1E20">fără retastare</text>
+</svg><figcaption>Cum circulă o comandă de la retailer până în ERP.</figcaption></figure>
     
 <h2>Situația</h2>
 <p>Firma primește în jur de 20 de comenzi pe zi de la Lidl, Rewe, Metro și alți clienți mari. Unele vin pe EDI, altele pe email. Toate erau introduse manual în ERP-ul Mentor.</p>
@@ -88,7 +88,7 @@
 <h2>Ce am construit</h2>
 <p>Un software care preia comenzile din EDI și din email, aplică automat regulile de corecție și creează comenzile direct în Mentor.</p>
 <p>Partea grea nu a fost codul. A fost să adun regulile: cele de pe hârtie și cele din capul oamenilor. Le-am discutat una câte una cu cei care introduceau comenzile și le-am pus în cod.</p>
-<blockquote>Cunoștințele din capul oamenilor au devenit reguli care rulează singure.</blockquote>
+<p>Ce știau doi-trei oameni din experiență rulează acum la fel, la fiecare comandă.</p>
 <h2>Rezultat</h2>
 <ul>
   <li>Comenzile nu mai sunt retastate în ERP.</li>
@@ -97,9 +97,9 @@
 </ul>
 <h2>Tehnologie, pe scurt</h2>
 <ul>
-  <li><strong>Preluarea comenzilor:</strong> Playwright descarcă automat comenzile din portalurile EDI ale retailerilor (PDF și XML).</li>
+  <li><strong>Preluarea comenzilor:</strong> automat, din canalele EDI ale retailerilor și din email (PDF și XML).</li>
   <li><strong>Citirea lor:</strong> parsere în Python pentru PDF (pdfplumber) și XML, câte unul pentru formatul fiecărui retailer.</li>
-  <li><strong>Regulile firmei:</strong> mapări de articole, coduri GLN de livrare, prețuri din ofertele clienților, scrise în cod și în fișiere de configurare pe care le poți verifica.</li>
+  <li><strong>Regulile firmei:</strong> mapări de articole, coduri GLN de livrare, prețuri din ofertele clienților, scrise în cod și în fișiere de configurare pe care le puteți verifica.</li>
   <li><strong>Crearea comenzii:</strong> prin API-ul REST al WinMentor, direct în ERP.</li>
   <li><strong>Panou de control:</strong> aplicație web în Vue 3, cu istoricul comenzilor trimise și rapoarte.</li>
   <li><strong>Rulare:</strong> backend FastAPI în Docker Compose, pe serverul clientului.</li>
@@ -110,17 +110,19 @@
 <section class="section cta-final" aria-labelledby="cta-final-h">
   <div class="wrap grid">
     <div>
-      <h2 id="cta-final-h">Două ore la voi în firmă. Plecați cu o listă scrisă.</h2>
-      <p class="lead">Spuneți-mi ce vă consumă cel mai mult timp. Ne uităm împreună la proces și primiți 3–5 lucruri care se pot automatiza, cu timp și cost estimat. Dacă nu se merită, vă spun asta.</p>
+      <h2 id="cta-final-h">Două ore la voi în firmă. Rămâneți cu o listă scrisă.</h2>
+      <p class="lead">Spuneți-mi ce vă consumă cel mai mult timp. Ne uităm împreună la proces și primiți 3–5 lucruri care se pot automatiza, cu timp și cost estimat. Dacă nu merită automatizat nimic, vă spun direct.</p>
     </div>
-    <section class="tblock" aria-label="Oferta: Diagnostic de automatizare">
-    <div class="tblock-title"><strong>Diagnostic de automatizare</strong><span>GRATUIT</span></div>
+    <section class="tblock" aria-label="Fișa diagnosticului de automatizare">
+    <div class="tblock-title"><strong>Diagnostic de automatizare</strong></div>
     <dl>
-      <dt>Ce faceți</dt><dd>Îmi arătați cum circulă o comandă, un document sau un produs prin firmă.</dd>
-      <dt>Durată</dt><dd>2 ore</dd>
-      <dt>Unde</dt><dd>La sediul vostru, în zona Sibiu și Cluj, sau online</dd>
-      <dt>Primiți</dt><dd><strong>O listă scrisă cu 3–5 lucruri care se pot automatiza</strong>, fiecare cu estimare de timp și cost</dd>
-      <dt>Obligații</dt><dd>Niciuna</dd>
+      <div class="c-wide"><dt>Ce faceți</dt><dd>Îmi arătați cum circulă o comandă, un document sau un produs prin firmă.</dd></div>
+      <div><dt>Durată</dt><dd class="tb-big">2 ore</dd></div>
+      <div><dt>Cost</dt><dd class="tb-big">Gratuit</dd></div>
+      <div class="c-wide"><dt>Unde</dt><dd>La sediul vostru, în zona Sibiu și Cluj, sau online</dd></div>
+      <div class="c-wide"><dt>Primiți</dt><dd><strong>O listă scrisă cu 3–5 lucruri care se pot automatiza</strong>, fiecare cu estimare de timp și cost</dd></div>
+      <div><dt>Obligații</dt><dd>Niciuna</dd></div>
+      <div><dt>Întocmit de</dt><dd>Tudor Brădescu</dd></div>
     </dl>
     <div class="tblock-foot"><div class="btn-row">
         <a class="btn btn-signal" href="/diagnostic/"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3.5" width="16" height="17"/><path d="M8 8.5h8M8 12.5h8M8 16.5h5"/></svg>Programează diagnosticul</a>
@@ -151,7 +153,7 @@
         <h2>Pagini</h2>
         <ul>
           <li><a href="/diagnostic/">Diagnostic de automatizare</a></li>
-          <li><a href="/#studii">Studii de caz</a></li>
+          <li><a href="/studii-de-caz/">Studii de caz</a></li>
           <li><a href="/despre/">Despre mine</a></li>
           <li><a href="/site-uri/">Site-uri de prezentare</a></li>
         </ul>
@@ -167,5 +169,6 @@
     <p class="foot-legal"><span>Brady Software SRL</span><span>CUI 47746610</span><span>J12/1025/2023</span><span>județul Cluj</span><span>din 2023</span></p>
   </div>
 </footer>
+<script src="/assets/js/site.js" defer></script>
 </body>
 </html>
